@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday 🎉</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.page {
+    display: none;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.active {
+    display: block;
+}
+
+/* Page 1 */
+#page1 {
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    color: white;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% }
+    50% { background-position: 100% }
+    100% { background-position: 0% }
+}
+
+/* Notebook */
+#page2 {
+    background: repeating-linear-gradient(
+        white,
+        white 28px,
+        #dcdcdc 29px
+    );
+    border-left: 6px solid #ff6f91;
+    overflow-y: auto;
+}
+
+/* Page 3 */
+#page3 {
+    background: #f0f8ff;
+    overflow-y: auto;
+}
+
+h1 {
+    font-size: 2.8em;
+}
+
+p {
+    font-size: 18px;
+}
+
+/* Buttons */
+button {
+    padding: 14px 30px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 30px;
+    background: #ff6f91;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff3e6c;
+    transform: scale(1.05);
+}
+
+/* GIF */
+img {
+    width: 260px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+/* Gifts */
+.gift-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.gift {
+    font-size: 70px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.gift:hover {
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 10px pink);
+}
+
+.hidden {
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div id="page1" class="page active">
+    <h1>🎂 Happy Birthday!</h1>
+
+    <p style="max-width:700px;margin:auto;">
+        Today is all about you. So this is just a small surprise
+        to make your day a little more fun and memorable.
+        Take your time and enjoy everything 😊
+    </p>
+
+    <!-- NEW HAPPY BDAY GIF -->
+    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHgycHRpNXR6MGxscmZtMnNjanAxYnR3ZXE0Y3FjNWxycXIxYTdxciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TbyAOtYa4ywrSpvjtm/giphy.gif">
+
+    <br>
+    <button onclick="nextPage(2)">Start 🎁</button>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2" class="page">
+    <h1>📓 A Small Note</h1>
+
+    <p style="max-width:750px;margin:auto;text-align:left;line-height:30px;">
+        Hey,<br><br>
+
+        So yeah… it’s your birthday, and I didn’t want to just send a basic message like everyone else.
+        You deserve something a little more thoughtful, so I tried this 😄<br><br>
+
+        You’re honestly a really nice person to be around. You have that kind of vibe that makes things feel lighter,
+        and people don’t always say it, but it actually matters a lot.<br><br>
+
+        I hope this year brings you happiness, less stress, and a lot of moments that make you smile for no reason.
+        And whatever you’re aiming for, I hope you achieve it properly.<br><br>
+
+        Anyway, enjoy your day fully. Don’t just sit replying to messages —
+        go have fun, eat good food, and make it memorable 😌<br><br>
+
+        Happy Birthday once again 🎉<br><br>
+
+        — From your friend 🙂
+    </p>
+
+    <div style="margin-top:30px;">
+        <p>Now go ahead… something’s waiting for you 👇</p>
+
+        <button onclick="nextPage(3)" style="font-size:20px;padding:16px 40px;">
+            🎁 Go to Gifts
+        </button>
+    </div>
+</div>
+
+<!-- PAGE 3 -->
+<div id="page3" class="page">
+    <h1>🎁 Pick a Gift</h1>
+
+    <p>Choose any one… or all of them 😄</p>
+
+    <div class="gift-container" id="gifts">
+        <div class="gift" onclick="showGift(1)">🎁</div>
+        <div class="gift" onclick="showGift(2)">🎁</div>
+        <div class="gift" onclick="showGift(3)">🎁</div>
+    </div>
+
+    <!-- Gift 1 -->
+    <div id="gift1" class="hidden">
+        <h2>🌸 Surprise 1</h2>
+        <p style="max-width:600px;margin:auto;">
+            Just a reminder that you deserve to be happy,
+            not just today but every day. Good things are coming.
+        </p>
+        <img src="https://media.giphy.com/media/l0MYyDa8S9ghzNebm/giphy.gif">
+        <br>
+        <button onclick="goBack()">Back</button>
+    </div>
+
+    <!-- Gift 2 -->
+    <div id="gift2" class="hidden">
+        <h2>✨ Surprise 2</h2>
+        <p style="max-width:600px;margin:auto;">
+            Stay the way you are. That’s your best version already.
+        </p>
+        <img src="https://media.giphy.com/media/3o7aCTfyhYawdOXcFW/giphy.gif">
+        <br>
+        <button onclick="goBack()">Back</button>
+    </div>
+
+    <!-- Gift 3 (UPDATED) -->
+    <div id="gift3" class="hidden">
+        <h2>🎉 Final Surprise</h2>
+        <p style="max-width:600px;margin:auto;">
+            And here it is… the final one. Just enjoy your day,
+            make memories, and don’t forget — today is YOUR day ✨
+        </p>
+
+        <!-- 13 APRIL GIF -->
+        <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGQ5enV1b3h3bnJ4cTE4dzRzYXpkNnI3c3R2NG5qc3Y0b2R3ZTlxbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QoE3o7x8koDjL39D3T/giphy.gif">
+        <p><b>13th April 🎂</b></p>
+
+        <br>
+        <button onclick="goBack()">Back</button><br>
+
+        <!-- NEW BUTTON -->
+        <button onclick="nextPage(1)">🏠 Go to Start</button>
+    </div>
+
+</div>
+
+<script>
+function nextPage(page) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page' + page).classList.add('active');
+}
+
+function showGift(num) {
+    document.getElementById('gifts').style.display = 'none';
+    document.querySelectorAll('[id^="gift"]').forEach(g => g.classList.add('hidden'));
+    document.getElementById('gift' + num).classList.remove('hidden');
+}
+
+function goBack() {
+    document.getElementById('gifts').style.display = 'flex';
+    document.querySelectorAll('[id^="gift"]').forEach(g => g.classList.add('hidden'));
+}
+</script>
+
+</body>
+</html>
